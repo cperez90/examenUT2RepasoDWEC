@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <title>Examen Vanilla JS</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <link rel="stylesheet" href="assets/css/skins/red.css" name="skins">
+
+    <link rel="stylesheet" href="assets/css/layout/wide.css" name="layout">
+
+    <link rel="stylesheet" href="assets/css/layout/switcher.css">
+
+    <link rel="stylesheet" href="assets/css/icons.css">
+
+    <link rel="stylesheet" href="assets/css/custom.css">
+
+    <link rel="shortcut icon" href="assets/images/favicon/favicon.ico">
+    <link rel="apple-touch-icon" href="assets/images/favicon/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/images/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/images/favicon/apple-touch-icon-114x114.png">
+
+
+</head>
+<body>
+
+<div id="wrap" class="boxed">
+
+    <header>
+        <div class="container clearfix">
+
+            <div class="one-third column">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/logopolitecnic.png" height="90" width="288" alt="Examen Vanilla JS"/> </a>
+                </div>
+            </div>
+
+            <div class="two-thirds column">
+                <nav id="menu" class="navigation">
+                    <ul id="nav">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="#">Pages</a>
+                            <ul>
+                                <li><a href="about.html">About us</a></li>
+                                <li><a href="services.html">Services</a></li>
+                                <li><a href="team.html">Our Team</a></li>
+                                <li><a href="process.html">Process</a></li>
+                                <li><a href="sidebar_right.html">Page Right Sidebar</a></li>
+                                <li><a href="sidebar_left.html">Page Left Sidebar</a></li>
+                                <li><a href="FAQ.html">FAQ</a></li>
+                                <li><a href="sitemap.html">Sitemap</a></li>
+                                <li><a href="full_width.html">Full Width</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Features</a>
+                            <ul>
+                                <li><a href="shortcodes.html">Shortcodes</a></li>
+                                <li><a href="icons.html">Icons</a></li>
+                                <li><a href="pricing_tables.html">Pricing Tables</a></li>
+                                <li><a href="under_construction.html">Under Construction</a></li>
+                                <li><a href="404.html">404 Page</a></li>
+                                <li><a href="#3">Third Level Item</a>
+                                    <ul>
+                                        <li><a href="#3-1">Sub Item Example 1</a></li>
+                                        <li><a href="#3-2">Sub Item Example 2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li><a href="portfolio_4.html" class="active">Portfolio</a>
+                            <ul>
+                                <li><a href="portfolio_2.html">2 Columns</a></li>
+                                <li><a href="portfolio_3.html">3 Columns</a></li>
+                                <li><a href="portfolio_4.html">4 Columns</a></li>
+                                <li><a href="single_project_1.html">Single Project 1</a></li>
+                                <li><a href="single_project_2.html">Single Project 2</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+            </div>
+
+            <div class="sixteen columns">
+                <hr/>
+            </div>
+
+        </div>
+    </header>
+
+    <div id="main" class="container clearfix">
+
+        <div class="sixteen columns"><h1 class="page-title">Examen recuperació /
+            <span class="gray2">Vanilla JS</span><span class="line"></span></h1></div>
+
+        <div id="containerfeatured">
+            <canvas id="canvas" width="400" height="300"></canvas>
+            <form>
+                <input type="radio" id="original" name="color" value="original" checked>
+                <label for="original">Original</label>
+
+                <input type="radio" id="grayscale" name="color" value="grayscale">
+                <label for="grayscale">Escala de grisos</label>
+
+                <input type="radio" id="inverted" name="color" value="inverted">
+                <label for="inverted">Invertit</label>
+
+                <input type="radio" id="sepia" name="color" value="sepia">
+                <label for="sepia">Sípia</label>
+            </form>
+        </div>
+
+        <div class="sixteen columns">
+            <div class="title clearfix" id="options">
+                <ul id="filters" class="option-set clearfix">
+                    <!-- EXERCICI 5 -->
+                    <li><a>Totes</a></li>
+                    <li><a>Categoria 1</a></li>
+                    <li><a>Categoria 2</a></li>
+                    <li><a>Categoria N</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+
+        <div class="portfolio">
+
+
+            <div class="gallery" id="contain">
+                <!-- EXERCICI 3 I 4 -->
+                <div class="four columns item">
+                    <div class="caption">
+                        <img src="https://images.pexels.com/photos/574069/pexels-photo-574069.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" class="pic"/>
+                    </div>
+                    <h4>{TITOL DE L'ENTRADA}</h4>
+                    <p>Publicat el {DATA DE L'ENTRADA}</p>
+                </div>
+
+                <div class="four columns item">
+                    <div class="caption">
+                        <img src="https://images.pexels.com/photos/4316/technology-computer-chips-gigabyte.jpg?auto=compress&cs=tinysrgb&w=800" alt="" class="pic"/>
+                    </div>
+                    <h4>{TITOL DE L'ENTRADA}</h4>
+                    <p>Publicat el {DATA DE L'ENTRADA}</p>
+                </div>
+
+                <div class="four columns item">
+                    <div class="caption">
+                        <img src="https://images.pexels.com/photos/247791/pexels-photo-247791.png?auto=compress&cs=tinysrgb&w=800" alt="" class="pic"/>
+                    </div>
+                    <h4>{TITOL DE L'ENTRADA}</h4>
+                    <p>Publicat el {DATA DE L'ENTRADA}</p>
+                </div>
+
+                <div class="four columns item">
+                    <div class="caption">
+                        <img src="https://images.pexels.com/photos/11035476/pexels-photo-11035476.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" class="pic"/>
+                    </div>
+                    <h4>{TITOL DE L'ENTRADA}</h4>
+                    <p>Publicat el {DATA DE L'ENTRADA}</p>
+                </div>
+
+                <div class="four columns item">
+                    <div class="caption">
+                        <img src="https://images.pexels.com/photos/114907/pexels-photo-114907.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" class="pic"/>
+                    </div>
+                    <h4>{TITOL DE L'ENTRADA}</h4>
+                    <p>Publicat el {DATA DE L'ENTRADA}</p>
+                </div>
+
+                <div class="four columns item">
+                    <div class="caption">
+                        <img src="https://images.pexels.com/photos/270637/pexels-photo-270637.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" class="pic"/>
+                    </div>
+                    <h4>{TITOL DE L'ENTRADA}</h4>
+                    <p>Publicat el {DATA DE L'ENTRADA}</p>
+                </div>
+
+                <div class="four columns item">
+                    <div class="caption">
+                        <img src="https://images.pexels.com/photos/3182773/pexels-photo-3182773.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" class="pic"/>
+                    </div>
+                    <h4>{TITOL DE L'ENTRADA}</h4>
+                    <p>Publicat el {DATA DE L'ENTRADA}</p>
+                </div>
+
+                <div class="four columns item">
+                    <div class="caption">
+                        <img src="https://images.pexels.com/photos/251225/pexels-photo-251225.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" class="pic"/>
+                    </div>
+                    <h4>{TITOL DE L'ENTRADA}</h4>
+                    <p>Publicat el {DATA DE L'ENTRADA}</p>
+                </div>
+
+                <div class="four columns item">
+                    <div class="caption">
+                        <img src="https://images.pexels.com/photos/1591060/pexels-photo-1591060.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" class="pic"/>
+                    </div>
+                    <h4>{TITOL DE L'ENTRADA}</h4>
+                    <p>Publicat el {DATA DE L'ENTRADA}</p>
+                </div>
+
+                <div class="four columns item">
+                    <div class="caption">
+                        <img src="https://images.pexels.com/photos/2004161/pexels-photo-2004161.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" class="pic"/>
+                    </div>
+                    <h4>{TITOL DE L'ENTRADA}</h4>
+                    <p>Publicat el {DATA DE L'ENTRADA}</p>
+                </div>
+
+                <div class="four columns item">
+                    <div class="caption">
+                        <img src="https://images.pexels.com/photos/5483075/pexels-photo-5483075.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" class="pic"/>
+                    </div>
+                    <h4>{TITOL DE L'ENTRADA}</h4>
+                    <p>Publicat el {DATA DE L'ENTRADA}</p>
+                </div>
+
+                <div class="four columns item">
+                    <div class="caption">
+                        <img src="https://images.pexels.com/photos/5474295/pexels-photo-5474295.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" class="pic"/>
+                    </div>
+                    <h4>{TITOL DE L'ENTRADA}</h4>
+                    <p>Publicat el {DATA DE L'ENTRADA}</p>
+                </div>
+
+                <div class="four columns item">
+                    <div class="caption">
+                        <img src="https://images.pexels.com/photos/4383298/pexels-photo-4383298.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" class="pic"/>
+                    </div>
+                    <h4>{TITOL DE L'ENTRADA}</h4>
+                    <p>Publicat el {DATA DE L'ENTRADA}</p>
+                </div>
+
+                <div class="four columns item">
+                    <div class="caption">
+                        <img src="https://images.pexels.com/photos/4218883/pexels-photo-4218883.jpeg?auto=compress&cs=tinysrgb&w=800" alt="" class="pic"/>
+                    </div>
+                    <h4>{TITOL DE L'ENTRADA}</h4>
+                    <p>Publicat el {DATA DE L'ENTRADA}</p>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div id="paginacio-container">
+            <select id="paginacio-number">
+                <option value="5">5</option>
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="-1">Totes</option>
+            </select>
+            <div class="paginacio">
+            <a href="#">&laquo;</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">&raquo;</a>
+            </div>
+        </div>
+
+        <div class="clearfix"></div>
+        <div id="formulari">
+            <h3>Formulari d'alta d'obra d'art.</h3>
+            <label>Títol de l'entrada</label>
+            <input id="form-titol" type="text" placeholder="Examen de Vanilla JS">
+            <label>URL</label>
+            <input id="form-url" type="text" placeholder="http://img.com/examenvanillajs.jpg">
+            <label>Data</label>
+            <input id="form-data" type="date">
+            <label>Categoria</label>
+            <select id="form-categoria">
+                <option value="Web">Web</option>
+                <option value="...">Carregueu les opcions aquí...</option>
+            </select>
+            <button id="form-send">Enviar</button>
+        </div>
+        <div class="clearfix"></div>
+        <footer>
+            <div class="container">
+
+                <div class="four columns">
+                    <div class="about">
+                        <h3 class="title">About Us<span class="line"></span></h3>
+                        <p>
+                            Consectetur adipiscing elit aeneane lorem lipsum, condimentum ultrices consequat eu,
+                            vehicula mauris lipsum adipiscing lipsum aenean orci lorem Asequat.
+                            <br/> lorem ipsum dolor lorem sit amet, consectetur adipiscing dolor . </p>
+                    </div>
+                </div>
+
+                <div class="four columns">
+                    <div class="tweets">
+                        <h3 class="title">Latest tweets<span class="line"></span></h3>
+                        <div class='tweet query footer'></div><!-- Tweets Code -->
+                    </div>
+                </div>
+
+                <div class="four columns">
+                    <div class="flickr">
+                        <h3 class="title">Flickr<span class="line"></span></h3>
+                        <ul id="footer" class="thumbs"></ul> <!-- Flickr Code -->
+                    </div>
+                </div>
+
+                <div class="four columns">
+                    <div class="subscribe">
+                        <h3 class="title">Subcribe<span class="line"></span></h3>
+                        <p>Subscribe to our e-mail newsletter to receive updates.</p>
+                        <form action="#">
+                            <input type="text" class="mail" placeholder="Enter your Email"/>
+                            <input type="submit" value="Submit" class="submit"/>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="sixteen columns">
+                    <hr class="bottom"/>
+                </div>
+
+                <div class="eight columns"><span class="copyright">
+      © Copyright 2012 <a href="index.html">Crevision</a>. All Rights Reserved. by 
+      <a href="http://jozoor.com/" target="_blank" data="Jozoor Team">jozoor</a></span></div>
+
+                <div class="eight columns">
+                    <div class="social">
+                        <a href="#"><img src="assets/images/icons/twitter.png" alt=""/></a>
+                        <a href="#"><img src="assets/images/icons/facebook.png" alt=""/></a>
+                        <a href="#"><img src="assets/images/icons/skype.png" alt=""/></a>
+                        <a href="#"><img src="assets/images/icons/digg.png" alt=""/></a>
+                        <a href="#"><img src="assets/images/icons/linkedin.png" alt=""/></a>
+                        <a href="#"><img src="assets/images/icons/vimeo.png" alt=""/></a>
+                    </div>
+                </div>
+
+            </div>
+        </footer>
+    </div>
+</div>
+<script src="gallery.js"></script>
+</body>
+</html>
