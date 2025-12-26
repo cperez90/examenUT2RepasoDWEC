@@ -13,6 +13,65 @@ const radioInvert = document.querySelector('#inverted');
 const radioSepia = document.querySelector('#sepia');
 const items = document.querySelectorAll('.gallery .item');
 
+fetch('https://theteacher.codiblau.com/public/exercicis/galeria/categories-list')
+    .then(response => response.json())
+    .then(categories => {
+        const filterContainer = document.querySelector('#filters');
+        filterContainer.innerHTML = '';
+
+        const allBtn = document.createElement('li');
+        allBtn.innerHTML = '<a href="#">Totes</a>';
+        filterContainer.appendChild(allBtn);
+
+        categories.forEach(cat => {
+            const li = document.createElement('li');
+            li.innerHTML = `<a href="#">${cat}</a>`;
+            filterContainer.appendChild(li);
+        });
+
+        const formSelect = document.querySelector('#form-categoria');
+        formSelect.innerHTML = '';
+
+        const allOption = document.createElement('option');
+        allOption.value = 'Totes';
+        allOption.textContent = 'Totes';
+        formSelect.appendChild(allOption);
+
+        categories.forEach(cat => {
+            const option = document.createElement('option');
+            option.value = cat;
+            option.textContent = cat;
+            formSelect.appendChild(option);
+        });
+
+        const items = document.querySelectorAll('.gallery .item');
+
+        function filterGallery(category){
+            items.forEach(item => {
+                if (category === 'Totes' || item.dataset.category === category){
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        filterContainer.querySelectorAll('li a').forEach(link => {
+            link.addEventListener('click', (e) =>{
+                e.preventDefault();
+                filterGallery(link.textContent);
+            });
+        });
+
+        formSelect.addEventListener('change', () => {
+            filterGallery(formSelect.value);
+        });
+    })
+    .catch(error => console.error( 'Error',error));
+
+
+
+
 img.onload = function() {
     resizeImage()
 };
