@@ -79,10 +79,6 @@ export class View {
 
         const formSelect = document.querySelector('#form-categoria');
         formSelect.innerHTML = '';
-        const allOption = document.createElement('option');
-        allOption.value = 'Totes';
-        allOption.textContent = 'Totes';
-        formSelect.appendChild(allOption);
 
         categories.forEach(cat => {
             const option = document.createElement('option');
