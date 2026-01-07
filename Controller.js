@@ -8,7 +8,95 @@ export class Controller {
         this.view = new View();
     }
 
+    artworks = [];
+    currentPage = 1;
+
+    paginacion(){
+        const paginacion = document.querySelector('.paginacio');
+        const pageSize = parseInt(document.querySelector('#paginacio-number')?.value, 10);
+        if (pageSize === -1) {
+            pag.innerHTML = "";          // o pag.style.display = "none";
+            this.currentPage = 1;
+            this.view.renderArtworks(this.renderPage().pageData);
+            return;
+        }
+
+        const {totalPages} = this.renderPage();
+        paginacion.innerHTML="";
+        const prev = document.createElement('a');
+        prev.href = "#";
+        prev.innerHTML= '<<';
+        prev.addEventListener('click',(e)=>{
+            e.preventDefault();
+            if (this.currentPage > 1){
+                this.currentPage--;
+                this.view.renderArtworks(this.renderPage().pageData);
+                this.paginacion();
+            }
+        });
+        const next = document.createElement('a');
+        next.href = "#";
+        next.innerHTML= '>>';
+        next.addEventListener('click',(e)=>{
+            e.preventDefault()
+            if (this.currentPage < totalPages){
+                this.currentPage++;
+                this.view.renderArtworks(this.renderPage().pageData);
+                this.paginacion();
+            }
+        });
+
+        paginacion.appendChild(prev);
+
+        for(let i = 1; i<totalPages; i++){
+            const pagesNumber = document.createElement('a');
+            pagesNumber.href="#"
+            pagesNumber.innerHTML=i.toString();
+            if (i === this.currentPage) pagesNumber.classList.add('active');
+            pagesNumber.addEventListener('click',(e)=>{
+                e.preventDefault();
+                this.currentPage = i;
+                this.view.renderArtworks(this.renderPage().pageData);
+                this.paginacion();
+            })
+            paginacion.appendChild(pagesNumber);
+        }
+
+        paginacion.appendChild(next);
+
+    }
+
+    renderPage(){
+        const images = this.artworks;
+        let pageSizeRaw = document.querySelector('#paginacio-number')?.value;
+        const pageSize = Math.max(1, parseInt(pageSizeRaw, 10) || 6);
+        if (pageSize === -1) {
+            this.currentPage = 1;
+            return {
+                totalPages: 1,
+                pageData: images.slice(),
+                pageSize: images.length || 1
+            };
+        }
+
+        const finalPageSize = pageSize > 0 ? pageSize : 6;
+
+        const totalPages = Math.max(1, Math.ceil(images.length / finalPageSize));
+        this.currentPage = Math.min(Math.max(1, this.currentPage), totalPages);
+
+        const start = (this.currentPage - 1) * finalPageSize;
+        const pageData = images.slice(start, start + finalPageSize);
+
+        return { totalPages, pageData, pageSize: finalPageSize };
+    }
+
     async init() {
+
+        document.querySelector('#paginacio-number')?.addEventListener('change', () => {
+            this.currentPage = 1;
+            this.view.renderArtworks(this.renderPage().pageData);
+            this.paginacion();
+        });
 
         const categories = await this.model.fetchCategories();
         this.view.renderCategories(categories);
@@ -25,8 +113,12 @@ export class Controller {
             this.view.filterArtworks(formSelect.value);
         });
 
-        const artworks = await this.model.fetchArtworks();
-        this.view.renderArtworks(artworks);
+        this.artworks = await this.model.fetchArtworks();
+        this.currentPage = 1;
+
+        this.view.renderArtworks(this.renderPage().pageData);
+        this.paginacion();
+
 
         const radios = [
             {id:'#original',fn: this.view.original.bind(this.view)},
@@ -52,8 +144,12 @@ export class Controller {
             }
 
             await this.model.saveArtwork({titol,url,data,categoria});
-            const artworks = await this.model.fetchArtworks();
-            this.view.renderArtworks(artworks);
+            this.artworks = await this.model.fetchArtworks();
+
+            this.currentPage = 1;
+            this.view.renderArtworks(this.renderPage().pageData);
+            this.paginacion();
         })
     }
+
 }
